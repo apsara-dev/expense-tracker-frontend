@@ -1,0 +1,260 @@
+/* ===== CONTAINER ===== */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #dbeafe, #e9d5ff);
+  transition: all 0.3s ease;
+}
+
+/* 🌙 DARK MODE */
+.container.dark {
+  background: #111827;
+  color: white;
+}
+
+/* ===== CARD ===== */
+.card {
+  width: 420px;
+  padding: 25px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dark .card {
+  background: #1f2937;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 22px;
+}
+
+.header button {
+  margin-left: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #6366f1;
+  color: white;
+}
+
+.header button:hover {
+  opacity: 0.9;
+}
+
+.logout {
+  background: #ef4444 !important;
+}
+
+/* ===== SUMMARY ===== */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.summary div {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f3f4f6;
+}
+
+.dark .summary div {
+  background: #374151;
+}
+
+.summary p {
+  font-size: 13px;
+}
+
+.summary h2 {
+  margin-top: 5px;
+}
+
+.green {
+  color: #22c55e;
+}
+
+.red {
+  color: #ef4444;
+}
+
+/* ===== FORM ===== */
+.form input,
+.form select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.dark .form input,
+.dark .form select {
+  background: #374151;
+  color: white;
+  border: 1px solid #555;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #6366f1;
+}
+
+/* BUTTON */
+.form button {
+  width: 100%;
+  padding: 12px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form button:hover {
+  background: #4f46e5;
+}
+
+/* ===== CHART ===== */
+.chart {
+  margin: 25px 0;
+}
+
+/* ===== TRANSACTIONS ===== */
+.transactions {
+  margin-top: 10px;
+}
+
+.transactions h3 {
+  margin-bottom: 10px;
+}
+
+/* EACH ITEM */
+.transactions .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  transition: 0.2s;
+}
+
+.transactions .item:hover {
+  transform: scale(1.02);
+}
+
+.dark .transactions .item {
+  background: #374151;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  gap: 5px;
+}
+
+.actions button {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+/* EDIT BUTTON */
+.actions button:first-child {
+  background: #f59e0b;
+}
+
+.actions button:first-child:hover {
+  background: #d97706;
+}
+
+/* DELETE BUTTON */
+.actions button:last-child {
+  background: #ef4444;
+}
+
+.actions button:last-child:hover {
+  background: #dc2626;
+}
+/* ===== SEARCH + FILTER ===== */
+.filter-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-box input,
+.filter-box select {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.dark .filter-box input,
+.dark .filter-box select {
+  background: #374151;
+  color: white;
+}
+/* MONTHLY */
+.monthly {
+  margin: 20px 0;
+}
+
+.monthly-box {
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.dark .monthly-box {
+  background: #374151;
+}
+/* BUDGET */
+.budget-box {
+  background: #f3f4f6;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.dark .budget-box {
+  background: #374151;
+}
+
+.budget-box input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.budget-box button {
+  padding: 8px 12px;
+}
+
+.warning {
+  color: red;
+  font-weight: bold;
+}
