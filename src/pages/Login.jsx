@@ -48,10 +48,6 @@ function Login() {
       if (res.data.otp_required) {
         setUsernameForOtp(res.data.username || username.trim());
         setMaskedEmail(res.data.email || "");
-        if (res.data.dev_otp) {
-          setDevOtp(res.data.dev_otp);
-          setOtp(res.data.dev_otp);
-        }
         setSuccess(res.data.message || "Security verification code sent to your email!");
         setStep(2);
         setResendCooldown(45);
@@ -128,10 +124,6 @@ function Login() {
       const res = await api.post("login/resend-otp/", {
         username: usernameForOtp,
       });
-      if (res.data.dev_otp) {
-        setDevOtp(res.data.dev_otp);
-        setOtp(res.data.dev_otp);
-      }
       setSuccess("A fresh verification code has been emailed to you!");
       setResendCooldown(45);
     } catch (err) {
@@ -164,21 +156,6 @@ function Login() {
         {error && <div className="auth-alert-error">{error}</div>}
         {success && <div className="auth-alert-success">{success}</div>}
 
-        {step === 2 && devOtp && (
-          <div style={{
-            background: "rgba(99, 102, 241, 0.1)",
-            border: "1px dashed var(--color-primary, #6366f1)",
-            borderRadius: "10px",
-            padding: "8px 12px",
-            fontSize: "12px",
-            color: "var(--color-primary, #6366f1)",
-            marginBottom: "14px",
-            textAlign: "center",
-            fontWeight: "600"
-          }}>
-            🔑 Dev Verification Code: <strong>{devOtp}</strong> (Console Backend)
-          </div>
-        )}
 
         {/* STEP 1: USERNAME/EMAIL + PASSWORD */}
         {step === 1 && (

@@ -46,10 +46,6 @@ function ForgotPassword() {
 
       setSuccess(res.data.message || "Verification code sent to your email!");
       setMaskedEmail(res.data.email || identifier.trim());
-      if (res.data.dev_otp) {
-        setDevOtp(res.data.dev_otp);
-        setOtp(res.data.dev_otp);
-      }
       setStep(2);
       setResendCooldown(45); // 45 seconds countdown before allowing resend
     } catch (err) {
@@ -127,10 +123,6 @@ function ForgotPassword() {
         email: identifier.trim(),
         username: identifier.trim(),
       });
-      if (res.data.dev_otp) {
-        setDevOtp(res.data.dev_otp);
-        setOtp(res.data.dev_otp);
-      }
       setSuccess("New verification code sent to your email!");
       setResendCooldown(45);
     } catch (err) {
@@ -164,21 +156,6 @@ function ForgotPassword() {
         {error && <div className="auth-alert-error">{error}</div>}
         {success && <div className="auth-alert-success">{success}</div>}
 
-        {step === 2 && devOtp && (
-          <div style={{
-            background: "rgba(99, 102, 241, 0.1)",
-            border: "1px dashed var(--color-primary, #6366f1)",
-            borderRadius: "10px",
-            padding: "8px 12px",
-            fontSize: "12px",
-            color: "var(--color-primary, #6366f1)",
-            marginBottom: "14px",
-            textAlign: "center",
-            fontWeight: "600"
-          }}>
-            🔑 Dev Verification Code: <strong>{devOtp}</strong> (Console Backend)
-          </div>
-        )}
 
         {/* STEP 1 FORM: ENTER EMAIL / USERNAME */}
         {step === 1 && (
